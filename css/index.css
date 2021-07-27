@@ -1,0 +1,460 @@
+:root {
+    /*Color*/
+    --color-primary: #07cdff;
+    --color-secundary: #0d4969;
+    --color-white: #fffff9;
+    --color-soft: #ffffea;
+
+    /*Typography*/
+
+    font-size: 10px;
+    --sd-font-size: 1.5rem;
+    --medium-font-size: 2.5rem;
+    --big-font-size: 3.5rem;
+    --h1-font-size: 4.5rem;
+    --li-font-size: 1.8rem;
+    --card-font-big-size: 3rem;
+
+    /*Padding*/
+    --sd-padding-size: 6rem;
+    --ft-padding-size: 10rem;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+    /*RELOGIO SENTIDO RELOGIO DE CONFIGURAÇAO*/
+    padding: 3rem 5%;
+    font-family: 'Quicksand', sans-serif;
+    background: var(--color-secundary);
+
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-white);
+
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--sd-font-size);
+    font-weight: 700;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+#container {
+    display: grid;
+    grid-template-areas: "header"
+        "main"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 28rem;
+}
+
+.logo img {
+    width: 30%;
+}
+
+.menu-toggle-container {
+    font-size: 3rem;
+    color: var(--color-white);
+    cursor: pointer;
+    display: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* menu */
+.menu li a {
+    font-size: var(--sd-font-size);
+    font-weight: 700;
+    color: var(--color-white);
+    padding: 1rem;
+    margin-right: 1.5rem;
+}
+
+.menu li a:hover {
+    color: var(--color-primary);
+    transition: .5s ease;
+}
+
+#btn {
+    width: 100%;
+    padding: 1rem 2.5rem;
+    background: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    color: var(--color-secundary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    opacity: 0.9;
+    transition: .5s ease;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: "greetings greetings"
+        'ideias ideias '
+        'your-ideias your-ideias'
+        'prices prices'
+        'footer footer'
+}
+
+.content-invite {
+    white-space: pre-line;
+}
+
+.content-invite h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.content-invite p {
+    font-size: var(--sd-font-size);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: justify;
+}
+
+.greetings {
+    grid-area: greetings;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50%, auto));
+    justify-content: center;
+    align-items: center;
+    padding-bottom: var(--sd-padding-size);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-left: 30px;
+}
+
+.card :first-child {
+    margin-left: 0%;
+}
+
+.cards {
+    display: flex;
+    padding: 20px;
+}
+
+.card .icon {
+    width: 150px;
+    height: 150px;
+}
+
+.icon img {
+    width: 100%;
+}
+
+.card button {
+    padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width:720px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-left: 0%;
+        margin-bottom: 32px;
+    }
+}
+
+.card:last-child {
+    margin-bottom: 0%;
+}
+
+.your-ideias {
+    grid-area: your-ideias;
+    padding-bottom: var(--sd-padding-size);
+}
+
+.teaching-container {
+    display: grid;
+    grid-template-columns: minmax(50%, auto);
+    align-items: center;
+    padding-top: var(--sd-padding-size);
+}
+
+.header-item {
+    display: flex;
+    align-items: center;
+}
+
+.reason-item p {
+    font-size: var(--sd-font-size);
+    font-weight: 400;
+    color: var(--color-primary);
+    text-align: justify;
+    padding: 2rem 0;
+    width: 75%;
+}
+
+.header-item span {
+    font-size: var(--big-font-size);
+    font-weight: 900;
+    color: var(--color-primary);
+    padding-right: 1rem;
+    width: 100%;
+    max-width: 36px;
+}
+
+
+.prices {
+    grid-area: prices;
+    padding-bottom: var(--ft-padding-size);
+}
+
+.header-prices h2 {
+    font-size: var(--big-font-size);
+    text-align: center;
+}
+
+.prices-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--color-secundary);
+    border: none;
+    text-align: center;
+    border-radius: 1rem;
+    pad: 40px 20px;
+}
+
+.cardPrices {
+    width: 100%;
+    max-width: 380px;
+    height: 580px;
+    padding: 5rem 2.5rem;
+    margin-right: 2rem;
+    background: var(--color-secundary);
+    border: solid .3rem var(--color-primary);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+}
+
+.cardPrices#social {
+    margin-right: 0%;
+}
+
+.card-body {
+    height: 100%;
+    font-size: var(--card-font-big-size);
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.card-body .price {
+    font-size: var(--card-font-big-size);
+}
+
+.plan-type {
+    font-size: var(--card-font-big-size);
+    font-weight: 700;
+    color: var(--color-primary);
+    padding-top: 2rem;
+}
+
+.plan-text {
+    font-size: var(--li-font-size);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.inf-Plan {
+    list-style: none;
+    max-height: 200px;
+    height: 100%;
+    padding-top: 2rem;
+}
+
+.inf-Plan li {
+    display: flex;
+    align-items: center;
+    font-size: var(--li-font-size);
+}
+
+.inf-Plan i {
+    font-size: 2rem;
+    padding: 1rem 1.2rem 1rem 0;
+}
+
+.plan-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.plan-btn button {
+    width: 70%;
+    padding: 1.5rem 2rem;
+    border: solid .3rem var(--color-secundary);
+    color: var(--color-secundary);
+}
+
+.footer {
+    grid-area: footer;
+    padding-bottom: 5rem;
+}
+
+.footer-menu-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, auto));
+}
+
+.footer-menu-item span {
+    display: inline-block;
+    font-size: var(--medium-font-size);
+    font-weight: 300;
+    color: var(--color-soft);
+    padding-bottom: 1.8rem;
+}
+
+.footer-menu {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.menu-social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-social-list li{min-width:50px ;
+min-height: 50px;
+border-radius: 50%;
+margin-right: 2rem;
+color:var(--color-primary);
+font-size: 2.43rem;
+display: flex;
+justify-content:center;
+align-items: center;
+cursor: pointer;}
+
+.social-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu-social-list li:last-child{margin-right: 0%;}
+
+@media screen and (max-width:1104px){
+    .menu-toggle-container{display: block;
+    position: absolute;
+right: 20px;z-index: 999;}
+.menu{position: fixed;
+top: 0%;
+right: -100%;
+width: 100%;
+max-width: 250px;
+height: 100vh;
+padding: 100px 20px;
+z-index: 800;
+background-color:#B4CDCD;
+flex-direction: column;
+transition: .5s ease;}
+.menu li a {
+margin-right: 0%;
+margin-bottom: 1.5rem;}
+.menu-toggle-container.actve{position: fixed;}
+.menu.actve{right: 0%;}
+}
+@media screen and (max-width:1100px){
+    :root{
+        --sd-font-size: 1.2rem;
+        --medium-font-size: 2.0rem;
+        --big-font-size: 3rem;
+        --h1-font-size: 4rem;
+        --li-font-size: 1.6rem;
+        --card-font-big-size: 2.5rem;
+    }
+    /* AQUI EMBAIXO QUE DEIXOU O CARD DE PREÇOS EM COLUNA */
+    .prices-container{display: grid;
+    grid-template-columns: 1fr;
+row-gap: 3rem;
+justify-items: center;}
+.cardPrices{margin:0;}
+
+}
+@media screen and (max-width:768){
+    .main{display:block;
+    padding: 4rem 0 5rem;}
+    .imaginacao img{width: 60%;}
+    }
+    @media screen and (max-width:500){
+        :root{--sd-font-size: 1.0rem;
+            --medium-font-size: 2.0rem;
+            --big-font-size: 3rem;
+            --h1-font-size: 4rem;
+            --li-font-size: 1rem;
+            --card-font-big-size: 2.5rem;}
+
+    }
